@@ -1,0 +1,71 @@
+<div class="starter-template">
+  <h2>{{ foundUser.name }}</h2>
+  <img src="{{ foundUser.photo }}" alt="" class="photo-size pb-3"> {{#if currentUser}} {{ else }}
+  <input type="hidden" id="user_id" value="{{ foundUser._id }}"> {{#if follower }}
+  <p>
+    <button class="btn btn-primary" id="unfollow">Following</button>
+  </p>
+  {{ else }}
+  <p>
+    <button class="btn btn-dark" id="follow">Follow</button>
+  </p>
+  {{/if }} {{/if }}
+</div>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" href="#woofsTab" role="tab" data-toggle="tab">Woofs</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#followingTab" role="tab" data-toggle="tab">Following</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#followersTab" role="tab" data-toggle="tab">Followers</a>
+  </li>
+</ul>
+
+<div class="tab-content py-3" id="myTabContent">
+  <div class="tab-pane fade show active" id="woofsTab" role="tabpanel" aria-labelledby="woofs-tab">
+    {{#each woofs}}
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img src="{{ owner.photo }}" alt="photo" class="media-object">
+        </a>
+      </div>
+      <div class="media-body pl-3">
+        <h4 class="media-heading">{{ owner.name }}</h4>
+        <p>{{ content}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tab-pane fade" id="followingTab" role="tabpanel" aria-labelledby="following-tab">
+    {{#each foundUser.following}}
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img src="{{ photo }}" alt="photo" class="media-object">
+        </a>
+      </div>
+      <div class="media-body pl-3">
+        <h4 class="media-heading">{{ name }}</h4>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="tab-pane fade" id="followersTab" role="tabpanel" aria-labelledby="followers-tab">
+    {{#each foundUser.followers}}
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img src="{{ photo }}" alt="photo" class="media-object">
+        </a>
+      </div>
+      <div class="media-body pl-3">
+        <h4 class="media-heading">{{ name }}</h4>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
