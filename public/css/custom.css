@@ -2,3 +2,244 @@
   width: 4rem;
 }
 
+.navbar > li a {
+  font: #000;
+}
+
+.landing-template {
+  padding: 7rem 1.5rem;
+  text-align: center;
+  background-image: url('/img/1_bg_panther-lg.svg');
+  background-repeat: no-repeat;
+  background-position: top -3.375rem right 0;
+  background-size: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: changeBackground 15s ease-in-out infinite;
+}
+
+.btn-landing {
+  border: 2px solid #232035;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: none;
+}
+
+.btn-landing--purple {
+  background-color: #232035;
+}
+
+.btns-div {
+  padding-top: 3rem;
+  position: absolute;
+  top: 365px;
+  left: 250px;
+}
+
+.row {
+  padding: 3rem;
+}
+
+.container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hero-quote {
+  padding: 20rem;
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.quote-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 400px;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transition: 0.5s;
+}
+
+.quote-box:hover {
+  transform: translate(-50%,-50%) rotateY(-30deg) skewY(5deg);
+}
+.quote-box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-top: 20px solid #fa9934;
+  border-left: 20px solid #fa9934;
+  box-sizing: border-box;
+
+}
+
+.quote-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-bottom: 20px solid #fa9934;
+  border-right: 20px solid #fa9934;
+  box-sizing: border-box;
+  
+}
+
+.text_area {
+  position: absolute;
+  top: 30px;
+  left: -30px;
+  background: #232035;
+  width: calc(100% + 60px);
+  height: calc(100% - 60px);
+  transition: 0.5s;
+}
+
+.quote-box:hover .text_area {
+  transform: rotateY(30deg) skewY(-5deg);
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  padding: 40px 80px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 3;
+  color: #fff;
+}
+
+.text-title {
+  margin: 0 0 20px;
+  padding: 0;
+  text-shadow: 2px 2px rgba(0,0,0,0.15);
+}
+
+.text-quote {
+  font-size: 18px;
+  
+}
+
+.fas {
+  width: 80px;
+  height: 80px;
+  background: #fa9934;
+  color: #262626;
+  text-align: center;
+  line-height: 80px;
+  font-size: 40px;
+}
+
+.fa-quote-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.fa-quote-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------ANIMATIONS---------*/
+@keyframes changeBackground {
+  0% {
+    background-image: url('/img/1_bg_panther-lg.svg');
+  }
+  25% {
+    background-image: url('/img/2_bg_cheetah-lg.svg');
+  }
+  
+  50% {
+    background-image: url('/img/3_bg_raven-lg.svg');
+  }
+
+  75% {
+    background-image: url('/img/4_bg_ironman-lg.svg');
+  }
+
+  100% {
+    background-image: url('/img/5_bg_blackadam-lg.svg');
+  }
+}
+
+
+
+
+
+/* ------MEDIA QUERIES---------*/
+@media (max-width: 900px) {
+  
+  .btns-div {
+    padding-top: 0;
+    position: relative;
+    top: 2.0625rem;
+    left: -4.375rem;
+  }
+
+  .btn-landing {
+    width: 20%;
+    font-size: .75rem;
+  }
+
+  .landing-template {
+    background-position: top 1.875rem right 0;
+    height: 100vh;
+    padding: 1.5rem;
+  }
+}

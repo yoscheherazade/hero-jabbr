@@ -41,4 +41,7 @@ mongoose.connect(config.database, function (err) {
   console.log("Connected to the Database");
 });
 
-
+//TODO:
+1. While logged in, pressing back more than once crashes app. (Err: Can't set headers after they are sent)
+1. Make landing page responsive
+1.
